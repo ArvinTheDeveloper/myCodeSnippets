@@ -1,0 +1,8 @@
+[?2018-?08-?17 16:58]  Christian Kangaji:  
+om du nån ång har en GUID, och systemet säger "can not conert blaha tot entity refrence"
+ 
+[?2018-?08-?17 16:58]  Christian Kangaji:  
+EntityReference incEntity = new EntityReference("incident", incidentId); 
+tog ett tag att hitta bara den kodraden -.-
+då har du en entity refrence till Guiden som den inte kunde konvertera
+ 
