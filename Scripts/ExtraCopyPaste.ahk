@@ -4,7 +4,9 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #c::
-send ^c
+clipboard =
+Send ^c
+Clipwait
 winTxt := Clipboard
 return
 
@@ -13,3 +15,12 @@ SendRaw, %winTxt%
 sleep 100 
 return
 
+^<::
+clipboard =
+SendInput ^c
+Clipwait
+string := Clipboard
+length := StrLen(string) - 2
+string := SubStr(string,2, length)
+SendRaw, %string%
+return
