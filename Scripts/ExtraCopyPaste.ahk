@@ -15,7 +15,7 @@ SendRaw, %winTxt%
 sleep 100 
 return
 
-^<::
+^!w::
 clipboard =
 SendInput ^c
 Clipwait
@@ -23,4 +23,14 @@ string := Clipboard
 length := StrLen(string) - 2
 string := SubStr(string,2, length)
 SendRaw, %string%
+return
+
+^!q::
+clipboard =
+SendInput ^c
+Clipwait
+string := Clipboard
+
+newString := quote . string . quote
+Send, %newString%
 return
