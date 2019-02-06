@@ -1,0 +1,33 @@
+
+
+<p>insert total sum:</p>
+<input type="text" id="brutto"/>
+<p>insert netto sum:</p>
+<input type="text" id="netto"/>
+<p>insert amount you you bought for youself</p>
+<input type="text" id="remove"/>
+
+<button type="submit" onclick="calc();">Calculate</button>
+
+<div id="vals">Brutto sum: </div>
+<div id="val">Netto sum: </div>
+<div id="valss">moms: </div>
+
+<script>
+function calc(){
+var netto = document.getElementById("netto").value;
+var brutto = document.getElementById("brutto").value;
+var remove = document.getElementById("remove").value;
+var dec = (netto/brutto);
+
+var sum = (brutto - remove) * (dec);
+var moms = (brutto-remove) - sum;
+document.getElementById("val").innerHTML += sum; 
+document.getElementById("vals").innerHTML += (brutto-remove); 
+document.getElementById("valss").innerHTML += moms; 
+
+
+}
+
+</script>
+

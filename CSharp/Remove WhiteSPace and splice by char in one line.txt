@@ -1,0 +1,3 @@
+ //Remove whitespaces with LINQ and split by ";"
+                    foreach (var r in new String(tempString.Where(c => !Char.IsWhiteSpace(c)).ToArray()).Split(';'))
+                        listGuid.Add(Guid.Parse(r));
